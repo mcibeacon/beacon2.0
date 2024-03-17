@@ -1,7 +1,7 @@
 // About.jsx
 
 import React from 'react';
-import './About.css'; // Import the associated CSS file
+import './about.css'; // Import the associated CSS file
 import { motion } from 'framer-motion-3d';
 import { textVariant } from '../utils/motion';
 import { styles } from '../styles';
