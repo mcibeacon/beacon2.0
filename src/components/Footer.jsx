@@ -49,14 +49,18 @@ const Footer = () => (
         </Link>
       </div>
     </div>
-    <Canvas camera={{  fov: 35,  position: [0, 0, 0]}}>
+    <div className="">
+  <div className="">
+    <Canvas camera={{ fov: 35, position: [0, 0, 0] }} className="">
       <Suspense fallback={null}>
-        <ambientLight/>
-        <directionalLight intensity={0.5} position={[0, 0, 80]} />       
-          <Rocks/>
-          <OrbitControls enableZoom={false} enableRotate={false}   />
-        </Suspense>
-      </Canvas>
+        <ambientLight />
+        <directionalLight intensity={0.5} position={[0, 0, 80]} />
+        <Rocks />
+        <OrbitControls enableZoom={false} enableRotate={false} />
+      </Suspense>
+    </Canvas>
+  </div>
+</div>
   </footer>
 );
 

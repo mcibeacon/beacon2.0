@@ -14,7 +14,7 @@ const Navbar = () => {
       <ul className='link-stuff '>
         
       <li className='links '>
-            <Link to="/about" className='max-xs:hidden page-link'>
+            <Link to="/about" className=' page-link max-xs:text-[10px]'>
             About
            
             </Link>
@@ -25,7 +25,7 @@ const Navbar = () => {
           
         
           <li className='links'>
-            <Link to="/members" className='max-xs:hidden  page-link'>
+            <Link to="/members" className='  page-link max-xs:text-[10px]'>
             Members
             </Link>
           </li>
@@ -35,21 +35,19 @@ const Navbar = () => {
         
         </Link>
         <li className='links '>
-            <Link to="/contact" className=' max-xs:hidden page-link'>
+            <Link to="/contact" className='  page-link max-xs:text-[10px]'>
               Contact
             </Link>
           </li>
           <li className='links'>
-          <Link to="/beardle" className='max-xs:hidden  page-link'>
+          <Link to="/beardle" className='  page-link max-xs:text-[10px]'>
             Beardle
             </Link>
           </li>
        
         </ul>
         </div>
-        <button className='md:hidden p-0 '>
-              <img src='' alt='Menu'/>
-            </button>
+   
         <div className='line'/>
       
       

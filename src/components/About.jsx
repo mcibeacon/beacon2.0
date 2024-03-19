@@ -15,7 +15,7 @@ const About = () => {
     whileInView="show"
     staggerContainer
     viewport={{ once: true, amount: 0.25 }}
-    className={`${styles.padding} article-card-container`}
+    className={`${styles.padding} article-card-container max-xs:w-1/2`}
   ><div className='stuff'>
     <motion.div variants={textVariant()} className='about-container'>
       

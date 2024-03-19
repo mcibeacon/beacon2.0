@@ -43,10 +43,10 @@ const Landing = () => {
           
           <Link to={`/articles/${mostRecentArticle.date}-${slugify(mostRecentArticle.title)}`} className="link">
             {mostRecentArticle && (
-              <div className="article-container max-xs:ml-[355px] shadow-card  max-xs:w-[370px]">
+              <div className="article-container max-xs:ml-[360px] shadow-card  max-xs:w-[330px]">
                 <div>
-                  <h3 className="article-title ">{mostRecentArticle.title}</h3>
-                  <h5 className="article-author">{mostRecentArticle.author}</h5>
+                  <h3 className="article-title max-xs:text-[13px] ">{mostRecentArticle.title}</h3>
+                  <h5 className="article-author max-xs:text-[11px]">{mostRecentArticle.author}</h5>
                   <h5 className="article-date">{mostRecentArticle.date}</h5>
                   <div className="article-content">
                     <h5 className="article-date max-xs:hidden">{mostRecentArticle.preview}</h5>
@@ -83,7 +83,33 @@ const Landing = () => {
               </motion.div>
             ))}
           </div>
+          <div className="mini-container md:hidden max-xs:mr-[125px] ">
+            {/* Mini Articles */}
+            {[4, 5, 6].map((index) => (
+              <motion.div key={index} variants={textVariant()} className=''>
+                <Link to={`/articles/${articles[index].date}-${slugify(articles[index].title)}`} className="link">
+                  {articles[index] && (
+                    <div className="mini-article-container  md:w-[400px]
+                   max-xs:ml-[0px] max-xs:opacity-[90%] max-xs:mr-[10px] max-xs:p-3 max-xs:block max-xs:-[30px] shadow-card max-xs:w-[120px] ">
+                      <div className='cropped-image '>
+                        <img src={articles[index].image} alt="image" className="mini-article-image max-xs:block" />
+                      </div>
+                      <h3 className="article-title  max-xs:mt-3 max-xs:text-[10px]" id="mini">
+                        {articles[index].title.length > 39
+                          ? articles[index].title.slice(0, 36) + "..."
+                          : articles[index].title}
+                      </h3>
+                      <h5 className="article-author max-xs:text-[9px]" id="mini">{articles[index].author}</h5>
+                      <h5 className="article-date max-xs:text-[9px]  " id="mini">{articles[index].date}</h5>
+                      <div className="article-content" id="mini"></div>
+                    </div>
+                  )}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
+        
 
         <div className="mini-containertwo max-xs:hidden">
           {/* Mini Articles */}
@@ -106,9 +132,11 @@ const Landing = () => {
                   </div>
                 )}
               </Link>
+              
             </motion.div>
           ))}
         </div>
+        
 
         {/* More Stories Section */}
         <motion.div className=' max-xs:hidden mr-12'>

@@ -309,8 +309,8 @@ function Beardle() {
 
         <motion.div variants={textVariant()}>
           {rows}
-          <h1 className='error'>{message}</h1>
-          <div className='keyboard'>
+          <h1 className='max-xs:hidden'>{message}</h1>
+          <div className='keyboard max-xs:w-1/2 max-xs:mr-[45px]'>
             {keyboardLayout.map((row, rowIndex) => (
               <div key={rowIndex} className='keyboard-row '>
                 {row.map((key, keyIndex) => (
