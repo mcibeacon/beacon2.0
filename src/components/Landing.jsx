@@ -37,44 +37,45 @@ const Landing = () => {
         whileInView="show"
         staggerContainer
         viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} article-card-container`}
+        className={`${styles.padding} article-card-container   `}
       ><div className='stuff'>
         <motion.div variants={textVariant()}>
           
           <Link to={`/articles/${mostRecentArticle.date}-${slugify(mostRecentArticle.title)}`} className="link">
             {mostRecentArticle && (
-              <div className="article-container shadow-card">
+              <div className="article-container max-xs:ml-[355px] shadow-card  max-xs:w-[370px]">
                 <div>
-                  <h3 className="article-title">{mostRecentArticle.title}</h3>
+                  <h3 className="article-title ">{mostRecentArticle.title}</h3>
                   <h5 className="article-author">{mostRecentArticle.author}</h5>
                   <h5 className="article-date">{mostRecentArticle.date}</h5>
                   <div className="article-content">
-                    <h5 className="article-date">{mostRecentArticle.preview}</h5>
+                    <h5 className="article-date max-xs:hidden">{mostRecentArticle.preview}</h5>
                   </div>
                 </div>
                 <div>
-                  <img src={mostRecentArticle.image} alt="image" className="article-image" />
+                  <img src={mostRecentArticle.image} alt="image" className="article-image max-xs:block" />
                 </div>
               </div>
             )}
           </Link>
-          <div className="mini-container">
+          <div className="mini-container max-xs:mr-[125px] ">
             {/* Mini Articles */}
             {[1, 2, 3].map((index) => (
-              <motion.div key={index} variants={textVariant()}>
+              <motion.div key={index} variants={textVariant()} className=''>
                 <Link to={`/articles/${articles[index].date}-${slugify(articles[index].title)}`} className="link">
                   {articles[index] && (
-                    <div className="mini-article-container shadow-card ">
-                      <div className='cropped-image'>
-                        <img src={articles[index].image} alt="image" className="mini-article-image" />
+                    <div className="mini-article-container  md:w-[400px]
+                   max-xs:ml-[0px] max-xs:opacity-[90%] max-xs:mr-[10px] max-xs:p-3 max-xs:block max-xs:-[30px] shadow-card max-xs:w-[120px] ">
+                      <div className='cropped-image '>
+                        <img src={articles[index].image} alt="image" className="mini-article-image max-xs:block" />
                       </div>
-                      <h3 className="article-title" id="mini">
+                      <h3 className="article-title  max-xs:mt-3 max-xs:text-[10px]" id="mini">
                         {articles[index].title.length > 39
                           ? articles[index].title.slice(0, 36) + "..."
                           : articles[index].title}
                       </h3>
-                      <h5 className="article-author" id="mini">{articles[index].author}</h5>
-                      <h5 className="article-date" id="mini">{articles[index].date}</h5>
+                      <h5 className="article-author max-xs:text-[9px]" id="mini">{articles[index].author}</h5>
+                      <h5 className="article-date max-xs:text-[9px]  " id="mini">{articles[index].date}</h5>
                       <div className="article-content" id="mini"></div>
                     </div>
                   )}
@@ -84,17 +85,17 @@ const Landing = () => {
           </div>
         </motion.div>
 
-        <div className="mini-containertwo">
+        <div className="mini-containertwo max-xs:hidden">
           {/* Mini Articles */}
           {[4, 5, 6].map((index) => (
             <motion.div key={index} variants={textVariant()}>
               <Link to={`/articles/${articles[index].date}-${slugify(articles[index].title)}`} className="link">
                 {articles[index] && (
-                  <div className="mini-article-container shadow-card ">
-                    <div className='cropped-image'>
-                      <img src={articles[index].image} alt="image" className="mini-article-image" />
+                  <div className="mini-article-container shadow-card max-xs:w-[100px] ">
+                    <div className='cropped-image max-xs:hidden'>
+                      <img src={articles[index].image} alt="image" className="mini-article-image " />
                     </div>
-                    <h3 className="article-title" id="mini">
+                    <h3 className="article-title max-xs:ml-0 max-xs:text-[10px]" id="mini">
                       {articles[index].title.length > 39
                         ? articles[index].title.slice(0, 36) + "..."
                         : articles[index].title}
@@ -110,9 +111,9 @@ const Landing = () => {
         </div>
 
         {/* More Stories Section */}
-        <motion.div>
-          <Card className="more-stories mr-[12px]">
-            <div className="mb-4 flex items-center justify-between">
+        <motion.div className=' max-xs:hidden mr-12'>
+          <Card className="more-stories max-xs:w-1/2 ">
+            <div className="mb-4 flex items-center justify-between max-xs:w-1/2">
               <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">More stories</h5>
               <Link to="./articles" className='allstories rounded-2xl' id="all-link ">View all</Link>
             </div>
@@ -131,8 +132,8 @@ const Landing = () => {
                             {article.author} |
                           </h5>
                         </div>
-                        <div className="min-w-0 flex-1">
-                          <h3 className=" font-medium text-tertiary" id="mini">
+                        <div className="min-w-0 flex-1 max-xs:w-2">
+                          <h3 className=" font-medium text-tertiary max-xs:text-[10px]" id="mini">
                             {article.title}
                           </h3>
                         </div>
@@ -157,7 +158,10 @@ const Landing = () => {
         </motion.div>
         
         </div>
-     
+
+              <h5 className="text-xl  p-3 leading-none text-gray-900 dark:text-white xs:hidden mb-2">More stories</h5>
+              <Link to="./articles" className='allstories rounded-2xl xs:hidden' id="all-link ">View all</Link>
+            
       </motion.section>
       <Footer/>
    
